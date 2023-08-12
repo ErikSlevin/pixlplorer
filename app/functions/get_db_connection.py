@@ -1,3 +1,4 @@
+import os
 import MySQLdb
 
 def get_db_connection():
