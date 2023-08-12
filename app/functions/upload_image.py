@@ -3,6 +3,7 @@ from flask import request, jsonify
 from werkzeug.utils import secure_filename
 from PIL import Image
 import MySQLdb
+from app.functions.get_db_connection import get_db_connection
 
 
 def upload_image():
