@@ -2,7 +2,7 @@
 
 docker-cli
 
-```shell
+```S
 docker run -d --name pixlplorer --hostname pixplorer \
     -p 5000:5000 \
     -e DB_HOST=localhost \
