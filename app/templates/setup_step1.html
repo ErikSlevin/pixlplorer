@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pixlplorer</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+
+</head>
+<body>
+    <header data-bs-theme="dark" class="mb-4">
+       <div class="navbar navbar-dark bg-dark shadow-sm mb-6">
+           <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    <strong>Pixlplorer - Setup</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-100 m-auto">
+        <div class="setup container p-3 card">
+            <p class="fs-3 text-center p-3">Datenbank Setup</p>
+            <form method="POST">
+                {{ form.csrf_token }}
+                <div class="mb-2 row">
+                    <label for="DB-HOST" class="col-sm-5 col-form-label text-end fw-semibold">DB HOST</label>
+                    <div class="col-sm-7">
+                        <input type="text" readonly class="form-control-plaintext font-monospace" id="DB-HOST" value="{{ form.db_host.data }}">
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <label for="DB-NAME" class="col-sm-5 col-form-label text-end fw-semibold">DB-NAME</label>
+                    <div class="col-sm-7">
+                        <input type="text" readonly class="form-control-plaintext font-monospace" id="DB-NAME" value="{{ form.db_name.data }}">
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <label for="DB-USER" class="col-sm-5 col-form-label text-end fw-semibold">DB-User</label>
+                    <div class="col-sm-7">
+                        <input type="text" readonly class="form-control-plaintext font-monospace" id="DB-USER" value="{{ form.db_user.data }}">
+                    </div>
+                </div>
+                <div class="mb-2 row">
+                    <label for="DB-PASSWORD" class="col-sm-5 col-form-label text-end fw-semibold">DB-PASSWORD</label>
+                    <div class="col-sm-7">
+                        <input type="text" readonly class="form-control-plaintext font-monospace" id="DB-PASSWORD" value="{{ form.db_password.data }}">
+                    </div>
+                </div>
+		<div class="d-grid gap-2 d-md-flex justify-content-md-center pt-3">
+                    <button type="submit" class="btn btn-primary btn-sm">Weiter</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

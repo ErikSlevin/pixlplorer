@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  pixlplorer:
+
+    image: pixlplorer
+    container_name: pixlplorer
+    hostname: pixplorer
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      - DB_HOST=10.0.0.20
+      - DB_NAME=pixlplorer
+      - DB_USER=root
+      - DB_PASSWORD=2qsFShr8rrw5X@gP
+      - SECRET_KEY=qwertz
+
+    volumes:
+      - type: bind
+        source:  /home/erik/configs/docker/pixlplorer/config.py
+        target: /app/config.py
+      - pixlplorer-upload:/app/uploads
+
+volumes:
+  pixlplorer-upload:
+    name: pixlplorer-upload
